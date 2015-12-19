@@ -1,0 +1,8 @@
+; don't have let yet
+
+((fn (x)
+  (assert (is ((x 0) 0) 'a))
+  (assert (is ((x 0) 1) 1))
+  (assert (is ((x 1) 0) 'b))
+  (assert (is ((x 1) 1) 2)))
+ (pair '(a 1 b 2)))

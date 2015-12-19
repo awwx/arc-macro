@@ -1,0 +1,5 @@
+(let f (fn ((o a 1) (o b (+ a 1)))
+         (list a b))
+  (test (f)     '(1 2))
+  (test (f 4)   '(4 5))
+  (test (f 6 3) '(6 3)))

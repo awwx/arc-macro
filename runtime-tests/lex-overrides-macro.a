@@ -1,0 +1,9 @@
+(assert (is ((fn (do)
+               (do 3))
+             -)
+            -3))
+
+(assert (is ((fn (do a)
+               (a do))
+             42 -)
+            -42))

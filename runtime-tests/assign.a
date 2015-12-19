@@ -1,0 +1,5 @@
+(assert (is (($fn--xVrP8JItk2Ot (a)
+               (assign a 123)
+               a)
+             456)
+            123))

@@ -1,0 +1,2 @@
+(assert (is (if nil 172 203) 203))
+(assert (is (if t   101 201) 101))

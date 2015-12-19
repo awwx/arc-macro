@@ -1,0 +1,3 @@
+(assert (is (acons (cons 1 2)) t))
+(assert (is (acons nil)        nil))
+(assert (is (acons 123)        nil))

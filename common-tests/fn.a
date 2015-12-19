@@ -1,0 +1,9 @@
+(assert (is ((fn () 651))         651))
+(assert (is ((fn () 400 401 402)) 402))
+
+(assert (is ((fn (a) a) 33) 33))
+
+(assert (is ((fn (a b) a) 33 44) 33))
+(assert (is ((fn (a b) b) 33 44) 44))
+
+; More tests in fn-dotted.t once we have test and iso.

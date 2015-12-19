@@ -1,0 +1,6 @@
+(test (aand)                     t)
+(test (aand nil)                 nil)
+(test (aand 1)                   1)
+(test (aand nil it)              nil)
+(test (aand 1 it)                1)
+(test (aand 1 (+ it 1) (+ it 1)) 3)

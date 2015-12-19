@@ -1,0 +1,3 @@
+(assert (is (list)            nil))
+(assert (is (car  (list 1 2)) 1))
+(assert (is (cadr (list 1 2)) 2))

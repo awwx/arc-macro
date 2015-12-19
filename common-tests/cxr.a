@@ -1,0 +1,1 @@
+(assert (is (caar '((a))) 'a))

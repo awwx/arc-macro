@@ -1,0 +1,6 @@
+(mac w/uniq (names . body)
+  (if (acons names)
+      `(,with ,(apply join nil (map1 (fn (n) `(,n (,uniq)))
+                                 names))
+         ,@body)
+      `(,let ,names (,uniq) ,@body)))

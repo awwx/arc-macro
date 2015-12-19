@@ -1,0 +1,5 @@
+(test (rreduce +    '())        0)
+(test (rreduce +    '(1))       1)
+(test (rreduce +    '(1 2))     3)
+(test (rreduce +    '(1 2 3 4)) 10)
+(test (rreduce cons '(1 2 3 4)) '(1 2 3 . 4))

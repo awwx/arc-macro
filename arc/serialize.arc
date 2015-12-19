@@ -1,0 +1,46 @@
+(def findin (table val)
+  (catch
+    (each (k v) table
+      (if (is v val)
+           (throw k)))
+    (err "not found in globals" val)))
+
+(test (findin (obj a 1 b 2 c 3) 2) 'b)
+
+(def serialize (x xglobals)
+  (if (isa x 'builtin)
+       (err "serialize: oops, a builtin:" (xhash x))
+      (is x nil)
+       nil
+      (caris x 'global--hgn9MWFvr2EXhNtFDsYf)
+       `($ global ,(cadr x))
+      (acons x)
+       (cons (serialize (car x) xglobals)
+             (serialize (cdr x) xglobals))
+      (is x '$)
+       '($ $)
+      (is x xglobals)
+       '($ globals)
+      (isa x 'fn)
+       `($ global ,(findin xglobals x))
+      (isa x 'table)
+       (err "serialize: oops, a table" x)
+      (tagged x)
+       `($ tagged ,(tagged x) ,(serialize (rep x) xglobals))
+       x))
+
+(def deserialize (x xglobals)
+  (if (caris x '$)
+       (case (cadr x)
+         $        '$
+         globals  xglobals
+         global   (or (xglobals (x 2))
+                      (err "oops" x))
+         tagged   (annotate (x 2) (deserialize (x 3) xglobals))
+         (err "deserialize: invalid $:" x))
+      (acons x)
+       (cons (deserialize (car x) xglobals)
+             (deserialize (cdr x) xglobals))
+      (isa x 'table)
+       (err "deserialize: oops, a table" x)
+       x))

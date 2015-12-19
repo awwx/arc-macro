@@ -1,0 +1,5 @@
+(test (dotted 1)          nil)
+(test (dotted '(1 . 2))   t)
+(test (dotted '(1 2))     nil)
+(test (dotted '(1 2 . 3)) t)
+(test (dotted '(1 2 3))   nil)

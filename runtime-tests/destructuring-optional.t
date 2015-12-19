@@ -1,0 +1,5 @@
+(let f (fn ((o (a b) '(1 2)))
+         (list a b))
+  (test (f)        '(1 2))
+  (test (f '(6 3)) '(6 3))
+  (test (f '(6))   '(6 nil)))

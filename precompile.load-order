@@ -1,0 +1,133 @@
+; Bootstrap into being able to reference and set global variables, and
+; having quote, fn, assign, and a simple 3 clause if.
+
+global
+global.a
+set-global
+set-global.a
+quote
+quote.a
+assign
+assign.a
+fn
+fn.a
+if-3-clause
+if-3-clause.a
+
+; Now we're more or less at the point where Arc 3.1's arc.arc starts
+; off (aside from not having quasiquotation, complex function
+; arguments, multi-clause if, ssyntax, the square bracket notation...)
+
+do
+do.a
+def
+cxr
+cxr.a
+predicates
+acons.a
+list
+list.a
+if-multi-clause
+if-multi-clause.a
+map1
+pair
+pair.a
+mac
+assert1
+with
+let
+
+; Now let's implement enough of Arc so that we can get quasiquotation.
+; (Some definitions such as rreduce got moved earlier since they were
+; used by the quasiquotation code).
+
+; This is the extended join that can produce dotted lists.
+
+join
+and
+and.a
+or
+or.a
+iso
+iso.a
+
+; Now that we have iso, a simple test macro.
+
+test1
+
+; Some tests that are easier to write with iso.
+
+fn-dotted.t
+join.t
+join-dotted.t
+
+caris
+caris.t
+alist
+alist.t
+single
+single.t
+dotted
+dotted.t
+rreduce
+rreduce.t
+isa
+literal
+literal.t
+literal-value
+literal-value.t
+
+; Ah, quasiquotation
+
+qq/qq
+
+; Now let's get enough of Arc loaded so that we can run the macro
+; expander and the compiler.
+
+
+; A more informative assert that prints the expression.
+
+; assert2
+
+; An implementation of bound that checks whether the named var is in
+; globals.
+
+bound-global
+bound.t
+
+; Extend referencing a global var to give an error if it isn't
+; defined.
+
+global-check
+
+w-uniq
+withs
+withs.t
+
+; Function argument destructuring and optional arguments.
+
+complex-fn
+fn-complex.t
+fn-empty-body.t
+
+; More Arc functions used by the macro expander and compiler.
+
+arc2
+
+; Full implementation of test which displays the source expression and
+; resulting value.
+
+test2
+
+; Macro expander
+
+ssyntax
+ssyntax.t
+macro
+macro.t
+
+; Compiler
+
+ac-racket
+eval
+load
