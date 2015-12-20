@@ -1,5 +1,8 @@
 # Arc Macro Expander
 
+See [Arc Macro Expander](http://awwx.github.io/arc-macro-expander.html)
+for goals and rationale.
+
 <dl>
  <dt>arc/ssyntax.arc</dt>
  <dd>
